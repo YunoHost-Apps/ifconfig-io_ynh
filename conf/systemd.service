@@ -1,0 +1,18 @@
+[Unit]
+Description=A simple IP address API.
+After=network.target
+
+[Service]
+Type=simple
+User=__APP__
+Group=__APP__
+Environment=PORT=__PORT__
+Environment=HOSTNAME=__DOMAIN__
+Environment=GIN_MODE=release
+WorkingDirectory=__APP_PATH__/
+ExecStart=__APP_PATH__/ifconfig.io
+StandardOutput=append:/var/log/__APP__/__APP__.log
+StandardError=append:/var/log/__APP__/__APP__.log
+
+[Install]
+WantedBy=multi-user.target

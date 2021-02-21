@@ -1,0 +1,13 @@
+diff --git a/main.go b/main.go
+index a43562c..78de22d 100644
+--- a/main.go
++++ b/main.go
+@@ -71,7 +71,7 @@ func mainHandler(c *gin.Context) {
+ 		c.Abort()
+ 	}
+
+-	cfIP := net.ParseIP(c.Request.Header.Get("CF-Connecting-IP"))
++	cfIP := net.ParseIP(c.Request.Header.Get("X-Forwarded-For"))
+ 	if cfIP != nil {
+ 		ip.IP = cfIP
+ 	}
