@@ -14,9 +14,8 @@ pkg_dependencies="golang"
 #=================================================
 # EXPERIMENTAL HELPERS
 #=================================================
-# ynh_exec_as__2
-#=================================================
 
+# ynh_exec_as__2
 # Execute a command as another user
 # usage: ynh_exec_as --user=USER --command=COMMAND [ARG ...]
 # | arg: -u, --user=        - the user that will execute the command

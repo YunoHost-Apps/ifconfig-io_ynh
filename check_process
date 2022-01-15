@@ -5,9 +5,9 @@
 
 ;; Test complet
 	; Manifest
-		domain="domain.tld"	(DOMAIN)
-		path="/path"	(PATH)
-		is_public=1	(PUBLIC|public=1|private=0)
+		domain="domain.tld"
+		path="/path"
+		is_public=1
 	; Checks
 		pkg_linter=1
 		setup_sub_dir=1
@@ -16,7 +16,8 @@
 		setup_private=1
 		setup_public=1
 		upgrade=1
-		upgrade=1	from_commit=CommitHash
+		# 2021.02.16~ynh1
+		upgrade=1	from_commit=68a38f6e9b2e357db46d2827a9781f58ea2422cc
 		backup_restore=1
 		multi_instance=1
 		port_already_use=0
@@ -25,7 +26,6 @@
 Email=
 Notification=none
 ;;; Upgrade options
-	; commit=CommitHash
-		name=Name and date of the commit.
-		manifest_arg=domain=DOMAIN&path=PATH&is_public=1
-
+	; commit=68a38f6e9b2e357db46d2827a9781f58ea2422cc
+		name=2021.02.16~ynh1
+		manifest_arg=domain=DOMAIN&path=PATH&&is_public=1
