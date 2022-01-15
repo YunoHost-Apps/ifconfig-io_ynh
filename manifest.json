@@ -9,10 +9,10 @@
     "url": "https://github.com/georgyo/ifconfig.io/",
     "upstream": {
         "license": "MIT",
-        "website": "https://github.com/georgyo/ifconfig.io/",
+        "website": "https://ifconfig.io/",
         "demo": "https://ifconfig.io",
-        "admindoc": "https://yunohost.org/packaging_apps",
-        "userdoc": "https://yunohost.org/apps",
+        "admindoc": "https://github.com/georgyo/ifconfig.io/",
+        "userdoc": "https://github.com/georgyo/ifconfig.io/",
         "code": "https://github.com/georgyo/ifconfig.io/"
     },
     "license": "MIT",
