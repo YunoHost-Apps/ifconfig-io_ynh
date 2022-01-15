@@ -37,7 +37,7 @@ final_path=/var/www/$app
 app_path="$final_path/go/src/github.com/georgyo/ifconfig.io"
 test ! -e "$final_path" || ynh_die --message="This path already contains a folder"
 ynh_app_setting_set --app=$app --key=final_path --value=$final_path
-ynh_app_setting_set --app=$app --key=final_path --value=$app_path
+ynh_app_setting_set --app=$app --key=app_path --value=$app_path
 
 # Register (book) web path
 ynh_webpath_register --app=$app --domain=$domain --path_url=$path_url
@@ -104,8 +104,8 @@ export GOPATH=$HOME/go
 export GO111MODULE=on
 
 pushd "$app_path"
-    go mod download
-    go build
+    ynh_exec_warn_less go mod download
+    ynh_exec_warn_less go build
 popd
 
 #=================================================
