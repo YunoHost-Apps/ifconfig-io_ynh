@@ -67,6 +67,9 @@ chmod 750 "$final_path"
 chmod -R o-rwx "$final_path"
 chown -R $app:www-data "$final_path"
 
+mkdir -p "/var/log/$app"
+chown -R $app: "/var/log/$app"
+
 #=================================================
 # SPECIFIC RESTORATION
 #=================================================
