@@ -19,6 +19,8 @@ app=$YNH_APP_INSTANCE_NAME
 domain=$(ynh_app_setting_get --app=$app --key=domain)
 path_url=$(ynh_app_setting_get --app=$app --key=path)
 final_path=$(ynh_app_setting_get --app=$app --key=final_path)
+app_path=$(ynh_app_setting_get --app=$app --key=app_path)
+port=$(ynh_app_setting_get --app=$app --key=port)
 
 #=================================================
 # CHECK VERSION
@@ -102,7 +104,15 @@ ynh_install_app_dependencies $pkg_dependencies
 #=================================================
 # SPECIFIC UPGRADE
 #=================================================
-# ...
+
+export GOPATH=$HOME/go
+export GO111MODULE=on
+
+pushd "$app_path"
+    ynh_exec_warn_less go mod download
+    ynh_exec_warn_less go build
+popd
+
 #=================================================
 
 #=================================================
