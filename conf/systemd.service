@@ -9,6 +9,7 @@ Group=__APP__
 Environment=PORT=__PORT__
 Environment=HOSTNAME=__DOMAIN__
 Environment=GIN_MODE=release
+Environment=FORWARD_IP_HEADER=X-Forwarded-For
 WorkingDirectory=__APP_PATH__/
 ExecStart=__APP_PATH__/ifconfig.io
 StandardOutput=append:/var/log/__APP__/__APP__.log

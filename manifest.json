@@ -5,7 +5,7 @@
     "description": {
         "en": "IP API service to get their public IP address."
     },
-    "version": "2021.02.16~ynh2",
+    "version": "2022.01.05~ynh1",
     "url": "https://github.com/georgyo/ifconfig.io/",
     "upstream": {
         "license": "MIT",
