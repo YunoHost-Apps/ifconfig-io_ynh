@@ -25,7 +25,6 @@ ynh_abort_if_errors
 
 domain=$YNH_APP_ARG_DOMAIN
 path_url=$YNH_APP_ARG_PATH
-is_public=$YNH_APP_ARG_IS_PUBLIC
 app=$YNH_APP_INSTANCE_NAME
 
 #=================================================
@@ -101,9 +100,6 @@ ynh_add_nginx_config
 #=================================================
 ynh_script_progression --message="Installing..." --weight=5
 
-export GOPATH=$HOME/go
-export GO111MODULE=on
-
 pushd "$app_path"
     ynh_exec_warn_less go mod download
     ynh_exec_warn_less go build
@@ -150,12 +146,9 @@ ynh_systemd_action --service_name=$app --action="start" --log_path="/var/log/$ap
 ynh_script_progression --message="Configuring permissions..." --weight=1
 
 # Make app public if necessary
-if [ $is_public -eq 1 ]
-then
-	# Everyone can access the app.
-	# The "main" permission is automatically created before the install script.
-	ynh_permission_update --permission="main" --add="visitors"
-fi
+# Everyone can access the app.
+# The "main" permission is automatically created before the install script.
+ynh_permission_update --permission="main" --add="visitors"
 
 #=================================================
 # RELOAD NGINX
