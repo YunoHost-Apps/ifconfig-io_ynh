@@ -106,6 +106,8 @@ ynh_install_app_dependencies $pkg_dependencies
 #=================================================
 ynh_script_progression --message="Upgrading..." --weight=5
 
+export GO111MODULE=on
+
 pushd "$app_path"
     ynh_exec_warn_less go mod download
     ynh_exec_warn_less go build
