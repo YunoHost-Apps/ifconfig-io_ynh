@@ -7,6 +7,7 @@
 #=================================================
 
 source _common.sh
+source ynh_install_go
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -100,15 +101,22 @@ ynh_add_nginx_config
 ynh_script_progression --message="Upgrading dependencies..." --weight=5
 
 ynh_install_app_dependencies $pkg_dependencies
+ynh_exec_warn_less ynh_install_go --go_version=$GO_VERSION
 
 #=================================================
 # SPECIFIC UPGRADE
 #=================================================
 ynh_script_progression --message="Upgrading..." --weight=5
 
+# Setup go environnement
+ynh_use_go
+export GOPATH="$final_path/go"
+export GOCACHE="$final_path/go/.cache"
+export GO111MODULE=on
+
 pushd "$app_path"
-    ynh_exec_warn_less go mod download
-    ynh_exec_warn_less go build
+    ynh_exec_warn_less $ynh_go mod download
+    ynh_exec_warn_less $ynh_go build -tags=jsoniter
 popd
 
 #=================================================

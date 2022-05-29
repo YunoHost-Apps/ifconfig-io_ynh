@@ -5,7 +5,9 @@
 #=================================================
 
 # dependencies used by the app
-pkg_dependencies="golang"
+pkg_dependencies=""
+
+GO_VERSION="1.18"
 
 #=================================================
 # PERSONAL HELPERS

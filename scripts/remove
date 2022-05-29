@@ -7,6 +7,7 @@
 #=================================================
 
 source _common.sh
+source ynh_install_go
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -72,6 +73,7 @@ ynh_script_progression --message="Removing dependencies..." --weight=5
 
 # Remove metapackage and its dependencies
 ynh_remove_app_dependencies
+ynh_remove_go
 
 #=================================================
 # CLOSE A PORT
