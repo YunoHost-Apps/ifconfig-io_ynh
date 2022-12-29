@@ -1,5 +1,5 @@
-SOURCE_URL=https://github.com/georgyo/ifconfig.io/archive/0395b2024d26ffa92cede56f456e4a784c45c4de.tar.gz
-SOURCE_SUM=8314375a4558d059eff6d45751c9b13429e720894a26b2b166ab0342489198e7
+SOURCE_URL=https://github.com/georgyo/ifconfig.io/archive/c2d3e4302166573003ce8ace4042f4a977133c31.tar.gz
+SOURCE_SUM=6a51296513c890b8f13726a730aff16f2a7426ed583f18e285d27ddbc904d7ff
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=tar.gz
 SOURCE_IN_SUBDIR=true
