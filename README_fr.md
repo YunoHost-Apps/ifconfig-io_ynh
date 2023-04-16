@@ -5,15 +5,16 @@ It shall NOT be edited by hand.
 
 # ifconfig-io pour YunoHost
 
-[![Niveau d'intégration](https://dash.yunohost.org/integration/ifconfig-io.svg)](https://dash.yunohost.org/appci/app/ifconfig-io) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/ifconfig-io.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/ifconfig-io.maintain.svg)  
+[![Niveau d’intégration](https://dash.yunohost.org/integration/ifconfig-io.svg)](https://dash.yunohost.org/appci/app/ifconfig-io) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/ifconfig-io.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/ifconfig-io.maintain.svg)
+
 [![Installer ifconfig-io avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=ifconfig-io)
 
 *[Read this readme in english.](./README.md)*
 
-> *Ce package vous permet d'installer ifconfig-io rapidement et simplement sur un serveur YunoHost.
-Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l'installer et en profiter.*
+> *Ce package vous permet d’installer ifconfig-io rapidement et simplement sur un serveur YunoHost.
+Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l’installer et en profiter.*
 
-## Vue d'ensemble
+## Vue d’ensemble
 
 Inspired by ifconfig.me, but designed for pure speed. A single server can do 18,000 requests per seconds while only consuming 50megs of ram.
 
@@ -22,15 +23,15 @@ I used the gin framework as it does several things to ensure that there are no m
 Tested to handle 15,000 requests persecond on modest hardware with an average response time of 130ms.
 
 
-**Version incluse :** 2022.12.16~ynh1
+**Version incluse :** 2023.03.26~ynh1
 
 **Démo :** https://ifconfig.io
 ## Documentations et ressources
 
-* Site officiel de l'app : <https://ifconfig.io/>
+* Site officiel de l’app : <https://ifconfig.io/>
 * Documentation officielle utilisateur : <https://github.com/georgyo/ifconfig.io/>
-* Documentation officielle de l'admin : <https://github.com/georgyo/ifconfig.io/>
-* Dépôt de code officiel de l'app : <https://github.com/georgyo/ifconfig.io/>
+* Documentation officielle de l’admin : <https://github.com/georgyo/ifconfig.io/>
+* Dépôt de code officiel de l’app : <https://github.com/georgyo/ifconfig.io/>
 * Documentation YunoHost pour cette app : <https://yunohost.org/app_ifconfig-io>
 * Signaler un bug : <https://github.com/YunoHost-Apps/ifconfig-io_ynh/issues>
 
@@ -46,4 +47,4 @@ ou
 sudo yunohost app upgrade ifconfig-io -u https://github.com/YunoHost-Apps/ifconfig-io_ynh/tree/testing --debug
 ```
 
-**Plus d'infos sur le packaging d'applications :** <https://yunohost.org/packaging_apps>
+**Plus d’infos sur le packaging d’applications :** <https://yunohost.org/packaging_apps>
