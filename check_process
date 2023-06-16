@@ -15,8 +15,8 @@
 		setup_private=0
 		setup_public=1
 		upgrade=1
-		# 2022.12.16~ynh1
-		upgrade=1	from_commit=cbfc1c97552baf502de72232d7467d9f168e4749
+		# 2023.03.26~ynh1
+		upgrade=1	from_commit=d365406c2e3be696ea13ff2a55b85980b73a9060
 		backup_restore=1
 		multi_instance=1
 		port_already_use=0
@@ -25,6 +25,6 @@
 Email=
 Notification=none
 ;;; Upgrade options
-	; commit=cbfc1c97552baf502de72232d7467d9f168e4749
-		name=2022.12.26~ynh1
+	; commit=d365406c2e3be696ea13ff2a55b85980b73a9060
+		name=2023.03.26~ynh1
 		manifest_arg=domain=DOMAIN&path=PATH
