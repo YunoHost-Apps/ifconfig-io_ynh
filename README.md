@@ -32,7 +32,7 @@ Tested to handle 15,000 requests persecond on modest hardware with an average re
 * Official user documentation: <https://github.com/georgyo/ifconfig.io/>
 * Official admin documentation: <https://github.com/georgyo/ifconfig.io/>
 * Upstream app code repository: <https://github.com/georgyo/ifconfig.io/>
-* YunoHost documentation for this app: <https://yunohost.org/app_ifconfig-io>
+* YunoHost Store: <https://apps.yunohost.org/app/ifconfig-io>
 * Report a bug: <https://github.com/YunoHost-Apps/ifconfig-io_ynh/issues>
 
 ## Developer info
