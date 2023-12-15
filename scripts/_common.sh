@@ -5,7 +5,7 @@
 #=================================================
 
 # dependencies used by the app
-pkg_dependencies=""
+#REMOVEME? pkg_dependencies=""
 
 GO_VERSION="1.19"
 
