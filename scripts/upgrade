@@ -7,7 +7,6 @@
 #=================================================
 
 source _common.sh
-source ynh_install_go
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -44,13 +43,10 @@ chown -R $app:www-data "$install_dir"
 #=================================================
 ynh_script_progression --message="Upgrading NGINX web server configuration..." --weight=1
 
-# Create a dedicated NGINX config
 ynh_add_nginx_config
 
-# Create a dedicated systemd config
 ynh_add_systemd_config
 
-# Use logrotate to manage app-specific logfile(s)
 ynh_use_logrotate --non-append
 
 yunohost service add $app --description="IP address API" --log="/var/log/$app/$app.log"
@@ -67,7 +63,6 @@ ynh_exec_warn_less ynh_install_go --go_version=$GO_VERSION
 #=================================================
 ynh_script_progression --message="Upgrading..." --weight=5
 
-# Setup go environnement
 ynh_use_go
 export GOPATH="$install_dir/go"
 export GOCACHE="$install_dir/go/.cache"

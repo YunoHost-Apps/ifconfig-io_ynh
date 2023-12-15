@@ -7,7 +7,6 @@
 #=================================================
 
 source _common.sh
-source ynh_install_go
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -23,19 +22,14 @@ then
 	yunohost service remove $app
 fi
 
-
-# Remove the dedicated systemd config
 ynh_remove_systemd_config
 
-# Remove the app-specific logrotate config
 ynh_remove_logrotate
 
-# Remove the dedicated NGINX config
 ynh_remove_nginx_config
 
 ynh_remove_go
 
-# Remove the log files
 ynh_secure_remove --file="/var/log/$app"
 
 #=================================================
