@@ -37,6 +37,10 @@ ram.runtime = "50M"
     type = "path"
     default = "/ifconfig"
 
+    [install.init_main_permission]
+    type = "group"
+    default = "visitors"
+
 [resources]
         [resources.sources.main]
         url = "https://github.com/georgyo/ifconfig.io/archive/4c3a38aec0523d95cd8bb9a9fdcbae019763f009.tar.gz"
