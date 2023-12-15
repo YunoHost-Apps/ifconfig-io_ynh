@@ -13,7 +13,7 @@ source /usr/share/yunohost/helpers
 #=================================================
 # CHECK IF THE APP CAN BE INSTALLED WITH THESE ARGS
 #=================================================
-#REMOVEME? ynh_script_progression --message="Validating installation parameters..." --weight=1
+ynh_script_progression --message="Validating installation parameters..." --weight=1
 
 app_path="$install_dir/go/src/github.com/georgyo/ifconfig.io"
 
