@@ -1,20 +1,16 @@
 #!/bin/bash
 
-#=================================================
-# GENERIC START
-#=================================================
-# IMPORT GENERIC HELPERS
-#=================================================
-
 source _common.sh
-source ynh_install_go
 source /usr/share/yunohost/helpers
 
-#=================================================
-# CHECK VERSION
-#=================================================
-
 upgrade_type=$(ynh_check_app_version_changed)
+
+#=================================================
+# UPGRADE DEPENDENCIES
+#=================================================
+ynh_script_progression --message="Upgrading go..." --weight=5
+
+ynh_exec_warn_less ynh_install_go --go_version=$GO_VERSION
 
 #=================================================
 # STANDARD UPGRADE STEPS
@@ -40,26 +36,6 @@ chmod -R o-rwx "$install_dir"
 chown -R $app:www-data "$install_dir"
 
 #=================================================
-# NGINX CONFIGURATION
-#=================================================
-ynh_script_progression --message="Upgrading NGINX web server configuration..." --weight=1
-
-ynh_add_nginx_config
-
-ynh_add_systemd_config
-
-ynh_use_logrotate --non-append
-
-yunohost service add $app --description="IP address API" --log="/var/log/$app/$app.log"
-
-#=================================================
-# UPGRADE DEPENDENCIES
-#=================================================
-ynh_script_progression --message="Upgrading dependencies..." --weight=5
-
-ynh_exec_warn_less ynh_install_go --go_version=$GO_VERSION
-
-#=================================================
 # SPECIFIC UPGRADE
 #=================================================
 ynh_script_progression --message="Upgrading..." --weight=5
@@ -73,6 +49,19 @@ pushd "$app_path"
     ynh_exec_warn_less $ynh_go mod download
     ynh_exec_warn_less $ynh_go build -tags=jsoniter
 popd
+
+#=================================================
+# NGINX CONFIGURATION
+#=================================================
+ynh_script_progression --message="Upgrading NGINX web server configuration..." --weight=1
+
+ynh_add_nginx_config
+
+ynh_add_systemd_config
+
+ynh_use_logrotate --non-append
+
+yunohost service add $app --description="IP address API" --log="/var/log/$app/$app.log"
 
 #=================================================
 # START SYSTEMD SERVICE
