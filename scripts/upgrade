@@ -45,7 +45,7 @@ export GOPATH="$install_dir/go"
 export GOCACHE="$install_dir/go/.cache"
 export GO111MODULE=on
 
-pushd "$app_path"
+pushd "$install_dir"
     ynh_exec_warn_less $ynh_go mod download
     ynh_exec_warn_less $ynh_go build -tags=jsoniter
 popd
