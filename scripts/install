@@ -1,26 +1,14 @@
 #!/bin/bash
 
-#=================================================
-# GENERIC START
-#=================================================
-# IMPORT GENERIC HELPERS
-#=================================================
-
 source _common.sh
-source ynh_install_go
 source /usr/share/yunohost/helpers
-
-#=================================================
-# CHECK IF THE APP CAN BE INSTALLED WITH THESE ARGS
-#=================================================
-ynh_script_progression --message="Validating installation parameters..." --weight=1
 
 app_path="$install_dir/go/src/github.com/georgyo/ifconfig.io"
 
 #=================================================
 # INSTALL DEPENDENCIES
 #=================================================
-ynh_script_progression --message="Installing dependencies..." --weight=5
+ynh_script_progression --message="Installing go..." --weight=5
 
 ynh_exec_warn_less ynh_install_go --go_version=$GO_VERSION
 
@@ -35,24 +23,9 @@ chmod -R o-rwx "$install_dir"
 chown -R $app:www-data "$install_dir"
 
 #=================================================
-# SETUP SYSTEMD
-#=================================================
-ynh_script_progression --message="Configuring a systemd service..." --weight=1
-
-ynh_add_nginx_config
-
-# Create a dedicated systemd config
-ynh_add_systemd_config
-
-# Use logrotate to manage application logfile(s)
-ynh_use_logrotate --logfile="/var/log/$app/$app.log"
-
-yunohost service add $app --description="IP address API" --log="/var/log/$app/$app.log"
-
-#=================================================
 # SPECIFIC SETUP
 #=================================================
-ynh_script_progression --message="Installing..." --weight=5
+ynh_script_progression --message="Building..." --weight=5
 
 # Setup go environnement
 ynh_use_go
@@ -66,9 +39,24 @@ pushd "$app_path"
 popd
 
 #=================================================
+# SETUP SYSTEM CONFS
+#=================================================
+ynh_script_progression --message="Adding system configurations related to $app..." --weight=1
+
+ynh_add_nginx_config
+
+# Create a dedicated systemd config
+ynh_add_systemd_config
+
+# Use logrotate to manage application logfile(s)
+ynh_use_logrotate --logfile="/var/log/$app/$app.log"
+
+yunohost service add $app --description="IP address API" --log="/var/log/$app/$app.log"
+
+#=================================================
 # START SYSTEMD SERVICE
 #=================================================
-ynh_script_progression --message="Starting a systemd service..." --weight=1
+ynh_script_progression --message="Starting service..." --weight=1
 
 # Start a systemd service
 ynh_systemd_action --service_name=$app --action="start" --log_path="/var/log/$app/$app.log"
