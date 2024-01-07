@@ -11,8 +11,8 @@ Environment=HOSTNAME=https://__DOMAIN____PATH__
 Environment=GIN_MODE=release
 Environment=FORWARD_IP_HEADER=X-Forwarded-For
 Environment="__YNH_GO_LOAD_PATH__"
-WorkingDirectory=__APP_PATH__/
-ExecStart=__APP_PATH__/ifconfig.io
+WorkingDirectory=__INSTALL_DIR__/
+ExecStart=__INSTALL_DIR__/ifconfig.io
 StandardOutput=append:/var/log/__APP__/__APP__.log
 StandardError=inherit
 
