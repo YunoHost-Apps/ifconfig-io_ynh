@@ -1,5 +1,5 @@
 [Unit]
-Description=A simple IP address API.
+Description=IfConfig-io: simple IP address API.
 After=network.target
 
 [Service]
@@ -7,12 +7,12 @@ Type=simple
 User=__APP__
 Group=__APP__
 Environment=PORT=__PORT__
-Environment=HOSTNAME=https://__DOMAIN____PATH_URL__
+Environment=HOSTNAME=https://__DOMAIN____PATH__
 Environment=GIN_MODE=release
 Environment=FORWARD_IP_HEADER=X-Forwarded-For
 Environment="__YNH_GO_LOAD_PATH__"
-WorkingDirectory=__APP_PATH__/
-ExecStart=__APP_PATH__/ifconfig.io
+WorkingDirectory=__INSTALL_DIR__/go/src/github.com/georgyo/ifconfig.io
+ExecStart=__INSTALL_DIR__/go/src/github.com/georgyo/ifconfig.io/ifconfig.io
 StandardOutput=append:/var/log/__APP__/__APP__.log
 StandardError=inherit
 

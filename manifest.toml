@@ -1,0 +1,56 @@
+packaging_format = 2
+
+id = "ifconfig-io"
+name = "ifconfig-io"
+description.en = "IP API service to get their public IP address."
+
+version = "2023.06.07~ynh1"
+
+maintainers = ["Fabian Wilkens"]
+
+[upstream]
+license = "MIT"
+website = "https://ifconfig.io/"
+demo = "https://ifconfig.io"
+admindoc = "https://github.com/georgyo/ifconfig.io/"
+userdoc = "https://github.com/georgyo/ifconfig.io/"
+code = "https://github.com/georgyo/ifconfig.io/"
+
+[integration]
+yunohost = ">= 11.2"
+architectures = "all"
+multi_instance = true
+
+ldap = false
+
+sso = false
+
+disk = "50M"
+ram.build = "50M"
+ram.runtime = "50M"
+
+[install]
+    [install.domain]
+    type = "domain"
+
+    [install.path]
+    type = "path"
+    default = "/ifconfig"
+
+    [install.init_main_permission]
+    type = "group"
+    default = "visitors"
+
+[resources]
+        [resources.sources.main]
+        url = "https://github.com/georgyo/ifconfig.io/archive/4c3a38aec0523d95cd8bb9a9fdcbae019763f009.tar.gz"
+        sha256 = "aa92565aba3cb2ce88808793c450b93c4dbd008e952f5cfe7c4c2fa677a6c226"
+
+    [resources.system_user]
+
+    [resources.install_dir]
+
+    [resources.ports]
+
+    [resources.permissions]
+    main.url = "/"
