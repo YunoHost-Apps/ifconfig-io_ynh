@@ -45,6 +45,7 @@ ram.runtime = "50M"
         [resources.sources.main]
         url = "https://github.com/georgyo/ifconfig.io/archive/4c3a38aec0523d95cd8bb9a9fdcbae019763f009.tar.gz"
         sha256 = "aa92565aba3cb2ce88808793c450b93c4dbd008e952f5cfe7c4c2fa677a6c226"
+        autoupdate.strategy = "latest_github_commit"
 
     [resources.system_user]
 
