@@ -4,7 +4,7 @@ id = "ifconfig-io"
 name = "ifconfig-io"
 description.en = "IP API service to get their public IP address."
 
-version = "2023.06.07~ynh1"
+version = "2024.01.06~ynh1"
 
 maintainers = ["Fabian Wilkens"]
 
@@ -43,8 +43,8 @@ ram.runtime = "50M"
 
 [resources]
         [resources.sources.main]
-        url = "https://github.com/georgyo/ifconfig.io/archive/4c3a38aec0523d95cd8bb9a9fdcbae019763f009.tar.gz"
-        sha256 = "aa92565aba3cb2ce88808793c450b93c4dbd008e952f5cfe7c4c2fa677a6c226"
+        url = "https://github.com/georgyo/ifconfig.io/archive/3233adac9a7ce721c1a0237788eb84237b0632b4.tar.gz"
+        sha256 = "4722bb0d360cc897b6b51c7f51e2651231deedcdb5c7982ca4fc2d5b0b6c26a7"
         autoupdate.strategy = "latest_github_commit"
 
     [resources.system_user]
