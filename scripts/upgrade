@@ -3,6 +3,8 @@
 source _common.sh
 source /usr/share/yunohost/helpers
 
+app_path="$install_dir/go/src/github.com/georgyo/ifconfig.io"
+
 #=================================================
 # UPGRADE DEPENDENCIES
 #=================================================
@@ -24,7 +26,7 @@ ynh_systemd_action --service_name=$app --action="stop" --log_path="/var/log/$app
 #=================================================
 ynh_script_progression --message="Upgrading source files..." --weight=1
 
-ynh_setup_source --dest_dir="$install_dir" --full_replace=1
+ynh_setup_source --dest_dir="$app_path" --full_replace=1
 
 chmod -R o-rwx "$install_dir"
 chown -R $app:www-data "$install_dir"
@@ -39,7 +41,7 @@ export GOPATH="$install_dir/go"
 export GOCACHE="$install_dir/go/.cache"
 export GO111MODULE=on
 
-pushd "$install_dir"
+pushd "$app_path"
     ynh_exec_warn_less $ynh_go mod download
     ynh_exec_warn_less $ynh_go build -tags=jsoniter
 popd
