@@ -22,8 +22,6 @@ ynh_remove_nginx_config
 
 ynh_remove_go
 
-ynh_secure_remove --file="/var/log/$app"
-
 #=================================================
 # END OF SCRIPT
 #=================================================
