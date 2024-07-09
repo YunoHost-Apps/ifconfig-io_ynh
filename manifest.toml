@@ -1,3 +1,5 @@
+#:schema https://raw.githubusercontent.com/YunoHost/apps/master/schemas/manifest.v2.schema.json
+
 packaging_format = 2
 
 id = "ifconfig-io"
@@ -43,10 +45,10 @@ ram.runtime = "50M"
     default = "visitors"
 
 [resources]
-        [resources.sources.main]
-        url = "https://github.com/georgyo/ifconfig.io/archive/57dcaffc5c74ae40ca3143ceeb0af64bf436ee63.tar.gz"
-        sha256 = "c3d7cfe762f7525e07524219a708ccdf2c4c57d4a6cea6eedcbababdd1069780"
-        autoupdate.strategy = "latest_github_commit"
+    [resources.sources.main]
+    url = "https://github.com/georgyo/ifconfig.io/archive/57dcaffc5c74ae40ca3143ceeb0af64bf436ee63.tar.gz"
+    sha256 = "c3d7cfe762f7525e07524219a708ccdf2c4c57d4a6cea6eedcbababdd1069780"
+    autoupdate.strategy = "latest_github_commit"
 
     [resources.system_user]
 

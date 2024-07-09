@@ -3,14 +3,12 @@
 source _common.sh
 source /usr/share/yunohost/helpers
 
-app_path="$install_dir/go/src/github.com/georgyo/ifconfig.io"
-
 #=================================================
 # INSTALL DEPENDENCIES
 #=================================================
 ynh_script_progression --message="Installing go..." --weight=5
 
-ynh_exec_warn_less ynh_install_go --go_version=$GO_VERSION
+ynh_exec_warn_less ynh_install_go --go_version="$GO_VERSION"
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
@@ -20,7 +18,7 @@ ynh_script_progression --message="Setting up source files..." --weight=1
 ynh_setup_source --dest_dir="$app_path"
 
 chmod -R o-rwx "$install_dir"
-chown -R $app:www-data "$install_dir"
+chown -R "$app:www-data" "$install_dir"
 
 #=================================================
 # SPECIFIC SETUP
@@ -34,8 +32,8 @@ export GOCACHE="$install_dir/go/.cache"
 export GO111MODULE=on
 
 pushd "$app_path"
-    ynh_exec_warn_less $ynh_go mod download
-    ynh_exec_warn_less $ynh_go build -tags=jsoniter
+    ynh_exec_warn_less ynh_exec_as "$app" "$ynh_go" mod download
+    ynh_exec_warn_less ynh_exec_as "$app" "$ynh_go" build -tags=jsoniter
 popd
 
 #=================================================
@@ -51,7 +49,7 @@ ynh_add_systemd_config
 # Use logrotate to manage application logfile(s)
 ynh_use_logrotate --logfile="/var/log/$app/$app.log"
 
-yunohost service add $app --description="IP address API" --log="/var/log/$app/$app.log"
+yunohost service add "$app" --description="IP address API" --log="/var/log/$app/$app.log"
 
 #=================================================
 # START SYSTEMD SERVICE
@@ -59,7 +57,7 @@ yunohost service add $app --description="IP address API" --log="/var/log/$app/$a
 ynh_script_progression --message="Starting service..." --weight=1
 
 # Start a systemd service
-ynh_systemd_action --service_name=$app --action="start" --log_path="/var/log/$app/$app.log"
+ynh_systemd_action --service_name="$app" --action="start" --log_path="/var/log/$app/$app.log"
 
 #=================================================
 # END OF SCRIPT
