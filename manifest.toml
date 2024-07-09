@@ -1,3 +1,5 @@
+#:schema https://raw.githubusercontent.com/YunoHost/apps/master/schemas/manifest.v2.schema.json
+
 packaging_format = 2
 
 id = "ifconfig-io"
@@ -5,7 +7,7 @@ name = "ifconfig-io"
 description.en = "IP API service to get their public IP address"
 description.fr = "Service API IP pour obtenir leur adresse IP publique"
 
-version = "2024.04.20~ynh1"
+version = "2024.07.02~ynh1"
 
 maintainers = ["Fabian Wilkens"]
 
@@ -43,10 +45,10 @@ ram.runtime = "50M"
     default = "visitors"
 
 [resources]
-        [resources.sources.main]
-        url = "https://github.com/georgyo/ifconfig.io/archive/6c13119b0b9cbf21143e4ca912dae26521dce8ae.tar.gz"
-        sha256 = "c61e36a3123c5fe48c0bd8c17b2a25f6af6f650ef4b5887df32096f4c5ce547e"
-        autoupdate.strategy = "latest_github_commit"
+    [resources.sources.main]
+    url = "https://github.com/georgyo/ifconfig.io/archive/57dcaffc5c74ae40ca3143ceeb0af64bf436ee63.tar.gz"
+    sha256 = "c3d7cfe762f7525e07524219a708ccdf2c4c57d4a6cea6eedcbababdd1069780"
+    autoupdate.strategy = "latest_github_commit"
 
     [resources.system_user]
 

@@ -5,7 +5,7 @@ It shall NOT be edited by hand.
 
 # ifconfig-io for YunoHost
 
-[![Integration level](https://dash.yunohost.org/integration/ifconfig-io.svg)](https://dash.yunohost.org/appci/app/ifconfig-io) ![Working status](https://ci-apps.yunohost.org/ci/badges/ifconfig-io.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/ifconfig-io.maintain.svg)
+[![Integration level](https://dash.yunohost.org/integration/ifconfig-io.svg)](https://ci-apps.yunohost.org/ci/apps/ifconfig-io/) ![Working status](https://ci-apps.yunohost.org/ci/badges/ifconfig-io.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/ifconfig-io.maintain.svg)
 
 [![Install ifconfig-io with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=ifconfig-io)
 
@@ -23,7 +23,7 @@ I used the gin framework as it does several things to ensure that there are no m
 Tested to handle 15,000 requests persecond on modest hardware with an average response time of 130ms.
 
 
-**Shipped version:** 2024.04.20~ynh1
+**Shipped version:** 2024.07.02~ynh1
 
 **Demo:** <https://ifconfig.io>
 ## Documentation and resources
