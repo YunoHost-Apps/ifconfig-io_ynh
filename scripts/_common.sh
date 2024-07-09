@@ -1,3 +1,3 @@
 #!/bin/bash
 
-GO_VERSION="1.19"
+GO_VERSION="1.22"
