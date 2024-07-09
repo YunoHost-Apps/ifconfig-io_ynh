@@ -3,17 +3,13 @@
 source _common.sh
 source /usr/share/yunohost/helpers
 
-app_path="$install_dir/go/src/github.com/georgyo/ifconfig.io"
-
 #=================================================
 # UPGRADE DEPENDENCIES
 #=================================================
 ynh_script_progression --message="Upgrading go..." --weight=5
 
-ynh_exec_warn_less ynh_install_go --go_version=$GO_VERSION
+ynh_exec_warn_less ynh_install_go --go_version="$GO_VERSION"
 
-#=================================================
-# STANDARD UPGRADE STEPS
 #=================================================
 # STOP SYSTEMD SERVICE
 #=================================================
@@ -29,7 +25,7 @@ ynh_script_progression --message="Upgrading source files..." --weight=1
 ynh_setup_source --dest_dir="$app_path" --full_replace=1
 
 chmod -R o-rwx "$install_dir"
-chown -R $app:www-data "$install_dir"
+chown -R "$app:www-data" "$install_dir"
 
 #=================================================
 # SPECIFIC UPGRADE
@@ -42,8 +38,8 @@ export GOCACHE="$install_dir/go/.cache"
 export GO111MODULE=on
 
 pushd "$app_path"
-    ynh_exec_warn_less $ynh_go mod download
-    ynh_exec_warn_less $ynh_go build -tags=jsoniter
+    ynh_exec_warn_less ynh_exec_as "$app" "$ynh_go" mod download
+    ynh_exec_warn_less ynh_exec_as "$app" "$ynh_go" build -tags=jsoniter
 popd
 
 #=================================================
@@ -57,14 +53,14 @@ ynh_add_systemd_config
 
 ynh_use_logrotate --non-append
 
-yunohost service add $app --description="IP address API" --log="/var/log/$app/$app.log"
+yunohost service add "$app" --description="IP address API" --log="/var/log/$app/$app.log"
 
 #=================================================
 # START SYSTEMD SERVICE
 #=================================================
-ynh_script_progression --message="Starting a systemd service..." --weight=1
+ynh_script_progression --message="Starting $app's systemd service..." --weight=1
 
-ynh_systemd_action --service_name=$app --action="start" --log_path="/var/log/$app/$app.log"
+ynh_systemd_action --service_name="$app" --action="start" --log_path="/var/log/$app/$app.log"
 
 #=================================================
 # END OF SCRIPT
