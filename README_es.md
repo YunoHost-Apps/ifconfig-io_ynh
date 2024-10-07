@@ -23,7 +23,7 @@ I used the gin framework as it does several things to ensure that there are no m
 Tested to handle 15,000 requests persecond on modest hardware with an average response time of 130ms.
 
 
-**Versión actual:** 2024.07.02~ynh1
+**Versión actual:** 2024.10.05~ynh1
 
 **Demo:** <https://ifconfig.io>
 ## Documentaciones y recursos
@@ -37,7 +37,7 @@ Tested to handle 15,000 requests persecond on modest hardware with an average re
 
 ## Información para desarrolladores
 
-Por favor enviar sus correcciones a la [`branch testing`](https://github.com/YunoHost-Apps/ifconfig-io_ynh/tree/testing
+Por favor enviar sus correcciones a la [rama `testing`](https://github.com/YunoHost-Apps/ifconfig-io_ynh/tree/testing).
 
 Para probar la rama `testing`, sigue asÍ:
 
