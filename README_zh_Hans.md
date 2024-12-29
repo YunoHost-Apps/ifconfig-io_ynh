@@ -5,7 +5,9 @@
 
 # YunoHost 上的 ifconfig-io
 
-[![集成程度](https://dash.yunohost.org/integration/ifconfig-io.svg)](https://ci-apps.yunohost.org/ci/apps/ifconfig-io/) ![工作状态](https://ci-apps.yunohost.org/ci/badges/ifconfig-io.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/ifconfig-io.maintain.svg)
+[![集成程度](https://apps.yunohost.org/badge/integration/ifconfig-io)](https://ci-apps.yunohost.org/ci/apps/ifconfig-io/)
+![工作状态](https://apps.yunohost.org/badge/state/ifconfig-io)
+![维护状态](https://apps.yunohost.org/badge/maintained/ifconfig-io)
 
 [![使用 YunoHost 安装 ifconfig-io](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=ifconfig-io)
 
@@ -23,7 +25,7 @@ I used the gin framework as it does several things to ensure that there are no m
 Tested to handle 15,000 requests persecond on modest hardware with an average response time of 130ms.
 
 
-**分发版本：** 2024.07.02~ynh1
+**分发版本：** 2024.12.29~ynh1
 
 **演示：** <https://ifconfig.io>
 ## 文档与资源
