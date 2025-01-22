@@ -5,7 +5,9 @@
 
 # YunoHost 上的 ifconfig-io
 
-[![集成程度](https://dash.yunohost.org/integration/ifconfig-io.svg)](https://ci-apps.yunohost.org/ci/apps/ifconfig-io/) ![工作状态](https://ci-apps.yunohost.org/ci/badges/ifconfig-io.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/ifconfig-io.maintain.svg)
+[![集成程度](https://apps.yunohost.org/badge/integration/ifconfig-io)](https://ci-apps.yunohost.org/ci/apps/ifconfig-io/)
+![工作状态](https://apps.yunohost.org/badge/state/ifconfig-io)
+![维护状态](https://apps.yunohost.org/badge/maintained/ifconfig-io)
 
 [![使用 YunoHost 安装 ifconfig-io](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=ifconfig-io)
 

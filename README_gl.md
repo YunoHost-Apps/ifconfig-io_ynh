@@ -5,7 +5,9 @@ NON debe editarse manualmente.
 
 # ifconfig-io para YunoHost
 
-[![Nivel de integración](https://dash.yunohost.org/integration/ifconfig-io.svg)](https://ci-apps.yunohost.org/ci/apps/ifconfig-io/) ![Estado de funcionamento](https://ci-apps.yunohost.org/ci/badges/ifconfig-io.status.svg) ![Estado de mantemento](https://ci-apps.yunohost.org/ci/badges/ifconfig-io.maintain.svg)
+[![Nivel de integración](https://apps.yunohost.org/badge/integration/ifconfig-io)](https://ci-apps.yunohost.org/ci/apps/ifconfig-io/)
+![Estado de funcionamento](https://apps.yunohost.org/badge/state/ifconfig-io)
+![Estado de mantemento](https://apps.yunohost.org/badge/maintained/ifconfig-io)
 
 [![Instalar ifconfig-io con YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=ifconfig-io)
 

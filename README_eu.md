@@ -5,7 +5,9 @@ EZ editatu eskuz.
 
 # ifconfig-io YunoHost-erako
 
-[![Integrazio maila](https://dash.yunohost.org/integration/ifconfig-io.svg)](https://ci-apps.yunohost.org/ci/apps/ifconfig-io/) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/ifconfig-io.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/ifconfig-io.maintain.svg)
+[![Integrazio maila](https://apps.yunohost.org/badge/integration/ifconfig-io)](https://ci-apps.yunohost.org/ci/apps/ifconfig-io/)
+![Funtzionamendu egoera](https://apps.yunohost.org/badge/state/ifconfig-io)
+![Mantentze egoera](https://apps.yunohost.org/badge/maintained/ifconfig-io)
 
 [![Instalatu ifconfig-io YunoHost-ekin](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=ifconfig-io)
 
