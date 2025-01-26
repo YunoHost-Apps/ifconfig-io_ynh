@@ -25,7 +25,7 @@ I used the gin framework as it does several things to ensure that there are no m
 Tested to handle 15,000 requests persecond on modest hardware with an average response time of 130ms.
 
 
-**分发版本：** 2024.07.02~ynh1
+**分发版本：** 2024.12.29~ynh1
 
 **演示：** <https://ifconfig.io>
 ## 文档与资源
