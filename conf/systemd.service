@@ -1,5 +1,5 @@
 [Unit]
-Description=IfConfig-io: simple IP address API.
+Description=IfConfig-io: simple IP address API
 After=network.target
 
 [Service]

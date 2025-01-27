@@ -4,8 +4,8 @@ packaging_format = 2
 
 id = "ifconfig-io"
 name = "ifconfig-io"
-description.en = "IP API service to get their public IP address"
-description.fr = "Service API IP pour obtenir leur adresse IP publique"
+description.en = "Tool to find your own IP address"
+description.fr = "Outil pour trouver votre propre adresse IP"
 
 version = "2024.12.29~ynh1"
 
@@ -20,13 +20,12 @@ userdoc = "https://github.com/georgyo/ifconfig.io/"
 code = "https://github.com/georgyo/ifconfig.io/"
 
 [integration]
-yunohost = ">= 11.2.18"
+yunohost = ">= 12.0.9"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
 
 ldap = false
-
 sso = false
 
 disk = "50M"
