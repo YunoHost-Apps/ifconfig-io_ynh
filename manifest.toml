@@ -7,7 +7,7 @@ name = "ifconfig-io"
 description.en = "IP API service to get their public IP address"
 description.fr = "Service API IP pour obtenir leur adresse IP publique"
 
-version = "2024.12.29~ynh1"
+version = "2024.12.29~ynh2"
 
 maintainers = ["Fabian Wilkens"]
 
@@ -15,8 +15,6 @@ maintainers = ["Fabian Wilkens"]
 license = "MIT"
 website = "https://ifconfig.io/"
 demo = "https://ifconfig.io"
-admindoc = "https://github.com/georgyo/ifconfig.io/"
-userdoc = "https://github.com/georgyo/ifconfig.io/"
 code = "https://github.com/georgyo/ifconfig.io/"
 
 [integration]
@@ -54,7 +52,7 @@ ram.runtime = "50M"
 
     [resources.install_dir]
 
-    [resources.ports]
-
     [resources.permissions]
     main.url = "/"
+
+    [resources.ports]
