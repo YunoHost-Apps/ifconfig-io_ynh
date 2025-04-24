@@ -4,7 +4,7 @@ It shall NOT be edited by hand.
 -->
 
 <h1>
-  <img src="https://raw.githubusercontent.com/YunoHost/apps/master/logos/ifconfig-io.png" width="32px" alt="Logo of ifconfig-io">
+  <img src="https://raw.githubusercontent.com/YunoHost/apps/main/logos/ifconfig-io.png" width="32px" alt="Logo of ifconfig-io">
   ifconfig-io, packaged for YunoHost
 </h1>
 
@@ -12,7 +12,7 @@ IP API service to get their public IP address
 
 [![🌐 Official app website](https://img.shields.io/badge/Official_app_website-darkgreen?style=for-the-badge)](https://ifconfig.io/)
 [![App Demo](https://img.shields.io/badge/App_Demo-blue?style=for-the-badge)](https://ifconfig.io)
-![Version: 2024.12.29~ynh2](https://img.shields.io/badge/Version-2024.12.29~ynh2-rgba(0,150,0,1)?style=for-the-badge)
+[![Version: 2025.04.14~ynh1](https://img.shields.io/badge/Version-2025.04.14~ynh1-rgba(0,150,0,1)?style=for-the-badge)](https://ci-apps.yunohost.org/ci/apps/ifconfig-io/)
 
 <div align="center">
 <a href="https://apps.yunohost.org/app/ifconfig-io"><img height="100px" src="https://github.com/YunoHost/yunohost-artwork/raw/refs/heads/main/badges/neopossum-badges/badge_more_info_on_the_appstore.svg"/></a>
