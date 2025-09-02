@@ -23,7 +23,7 @@ ynh_remove_logrotate
 
 ynh_remove_nginx_config
 
-ynh_remove_go
+#REMOVEME? ynh_remove_go
 
 #=================================================
 # END OF SCRIPT

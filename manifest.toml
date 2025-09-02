@@ -18,7 +18,7 @@ demo = "https://ifconfig.io"
 code = "https://github.com/georgyo/ifconfig.io/"
 
 [integration]
-yunohost = ">= 11.2.12"
+yunohost = ">= 12.1.17"
 architectures = "all"
 multi_instance = true
 
@@ -56,3 +56,6 @@ ram.runtime = "50M"
     main.url = "/"
 
     [resources.ports]
+
+    [resources.go]
+    version = "1.22"
