@@ -10,9 +10,9 @@ source /usr/share/yunohost/helpers
 #=================================================
 # UPGRADE DEPENDENCIES
 #=================================================
-ynh_script_progression --message="Upgrading go..." --weight=5
+#REMOVEME? ynh_script_progression --message="Upgrading go..." --weight=5
 
-ynh_exec_warn_less ynh_install_go --go_version="$GO_VERSION"
+#REMOVEME? ynh_exec_warn_less #REMOVEME? ynh_install_go --#REMOVEME? go_version="$GO_VERSION"
 
 #=================================================
 # STOP SYSTEMD SERVICE
@@ -36,7 +36,7 @@ chown -R "$app:www-data" "$install_dir"
 #=================================================
 ynh_script_progression --message="Upgrading..." --weight=5
 
-ynh_use_go
+#REMOVEME? ynh_use_go
 export GOPATH="$install_dir/go"
 export GOCACHE="$install_dir/go/.cache"
 export GO111MODULE=on

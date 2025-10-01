@@ -26,7 +26,7 @@ chown -R "$app:" "/var/log/$app"
 #=================================================
 ynh_script_progression --message="Reinstalling dependencies..." --weight=5
 
-ynh_exec_warn_less ynh_install_go --go_version="$GO_VERSION"
+#REMOVEME? ynh_exec_warn_less #REMOVEME? ynh_install_go --#REMOVEME? go_version="$GO_VERSION"
 
 #=================================================
 # RESTORE SYSTEMD
