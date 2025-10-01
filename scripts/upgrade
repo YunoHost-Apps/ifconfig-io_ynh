@@ -35,6 +35,8 @@ pushd "$app_path"
     ynh_hide_warnings ynh_exec_as_app go build -tags=jsoniter
 popd
 
+mv $install_dir/go/src/github.com/georgyo/ifconfig.io/ifconfig.io $install_dir/ifconfig.io/
+
 #=================================================
 # NGINX CONFIGURATION
 #=================================================

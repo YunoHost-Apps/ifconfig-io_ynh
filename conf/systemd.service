@@ -11,8 +11,8 @@ Environment=HOSTNAME=https://__DOMAIN____PATH__
 Environment=GIN_MODE=release
 Environment=FORWARD_IP_HEADER=X-Forwarded-For
 Environment="PATH=__PATH_WITH_GO__"
-WorkingDirectory=__INSTALL_DIR__/go/src/github.com/georgyo/ifconfig.io
-ExecStart=__INSTALL_DIR__/go/src/github.com/georgyo/ifconfig.io/ifconfig.io
+WorkingDirectory=__INSTALL_DIR__/
+ExecStart=__INSTALL_DIR__/ifconfig.io
 StandardOutput=append:/var/log/__APP__/__APP__.log
 StandardError=inherit
 
