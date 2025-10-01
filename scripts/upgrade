@@ -8,13 +8,6 @@ source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# UPGRADE DEPENDENCIES
-#=================================================
-ynh_script_progression "Upgrading go..."
-
-ynh_go_install
-
-#=================================================
 # STOP SYSTEMD SERVICE
 #=================================================
 ynh_script_progression "Stopping $app's systemd service..."

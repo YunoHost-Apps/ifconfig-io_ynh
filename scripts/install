@@ -8,13 +8,6 @@ source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# INSTALL DEPENDENCIES
-#=================================================
-ynh_script_progression "Installing go..."
-
-ynh_go_install
-
-#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 ynh_script_progression "Setting up source files..."
@@ -27,7 +20,6 @@ ynh_setup_source --dest_dir="$app_path"
 ynh_script_progression "Building..."
 
 # Setup go environnement
-
 export GOPATH="$install_dir/go"
 export GOCACHE="$install_dir/go/.cache"
 export GO111MODULE=on
