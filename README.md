@@ -8,7 +8,7 @@ It shall NOT be edited by hand.
   ifconfig-io, packaged for YunoHost
 </h1>
 
-IP API service to get their public IP address
+Tool to find your own IP address
 
 [![🌐 Official app website](https://img.shields.io/badge/Official_app_website-darkgreen?style=for-the-badge)](https://ifconfig.io/)
 [![App Demo](https://img.shields.io/badge/App_Demo-blue?style=for-the-badge)](https://ifconfig.io)
