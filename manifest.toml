@@ -4,8 +4,8 @@ packaging_format = 2
 
 id = "ifconfig-io"
 name = "ifconfig-io"
-description.en = "IP API service to get their public IP address"
-description.fr = "Service API IP pour obtenir leur adresse IP publique"
+description.en = "Tool to find your own IP address"
+description.fr = "Outil pour trouver votre propre adresse IP"
 
 version = "2025.09.26~ynh1"
 
@@ -19,16 +19,16 @@ code = "https://github.com/georgyo/ifconfig.io/"
 
 [integration]
 yunohost = ">= 12.1.17"
+helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
 
 ldap = false
-
 sso = false
 
-disk = "50M"
-ram.build = "50M"
-ram.runtime = "50M"
+disk = "750M"
+ram.build = "1000M"
+ram.runtime = "80M"
 
 [install]
     [install.domain]
