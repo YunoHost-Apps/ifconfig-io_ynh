@@ -12,27 +12,35 @@ source /usr/share/yunohost/helpers
 #=================================================
 ynh_script_progression "Setting up source files..."
 
-ynh_setup_source --dest_dir="$app_path"
-
-chmod -R o-rwx "$install_dir"
-chown -R "$app:www-data" "$install_dir"
+ynh_setup_source --dest_dir="$install_dir"
 
 #=================================================
 # SPECIFIC SETUP
 #=================================================
-ynh_script_progression "Building..."
+#ynh_script_progression "Building..."
 
 # Setup go environnement
-export GOPATH="$install_dir/go"
-export GOCACHE="$install_dir/go/.cache"
-export GO111MODULE=on
+#export GOPATH="$install_dir/go"
+#export GOCACHE="$install_dir/go/.cache"
+#export GO111MODULE=on
 
-pushd "$app_path"
-    ynh_hide_warnings ynh_exec_as_app go mod download
-    ynh_hide_warnings ynh_exec_as_app go build -tags=jsoniter
+#pushd "$install_dir/go/src/github.com/georgyo/ifconfig.io"
+#    ynh_hide_warnings ynh_exec_as_app go mod download
+#    ynh_hide_warnings ynh_exec_as_app go build -tags=jsoniter
+#popd
+
+#mv $install_dir/go/src/github.com/georgyo/ifconfig.io/ $install_dir/ifconfig.io/
+
+#=================================================
+# BUILD APP
+#=================================================
+ynh_script_progression "Building $app..."
+
+pushd $install_dir
+    ynh_hide_warnings ynh_exec_as_app CGO_ENABLED=0 go build -o $install_dir/ifconfig
 popd
 
-mv $install_dir/go/src/github.com/georgyo/ifconfig.io/ $install_dir/ifconfig.io/
+chmod +x "$install_dir/ifconfig"
 
 #=================================================
 # SETUP SYSTEM CONFS
