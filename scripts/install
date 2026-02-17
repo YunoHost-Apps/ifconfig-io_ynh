@@ -8,63 +8,45 @@ source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# INSTALL DEPENDENCIES
-#=================================================
-ynh_script_progression --message="Installing go..." --weight=5
-
-ynh_exec_warn_less ynh_install_go --go_version="$GO_VERSION"
-
-#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
-ynh_script_progression --message="Setting up source files..." --weight=1
+ynh_script_progression "Setting up source files..."
 
-ynh_setup_source --dest_dir="$app_path"
-
-chmod -R o-rwx "$install_dir"
-chown -R "$app:www-data" "$install_dir"
+ynh_setup_source --dest_dir="$install_dir"
 
 #=================================================
-# SPECIFIC SETUP
+# BUILD APP
 #=================================================
-ynh_script_progression --message="Building..." --weight=5
+ynh_script_progression "Building $app..."
 
-# Setup go environnement
-ynh_use_go
-export GOPATH="$install_dir/go"
-export GOCACHE="$install_dir/go/.cache"
-export GO111MODULE=on
-
-pushd "$app_path"
-    ynh_exec_warn_less ynh_exec_as "$app" "$ynh_go" mod download
-    ynh_exec_warn_less ynh_exec_as "$app" "$ynh_go" build -tags=jsoniter
+pushd $install_dir
+    ynh_hide_warnings ynh_exec_as_app CGO_ENABLED=0 go build -o $install_dir/ifconfig
 popd
 
+chmod +x "$install_dir/ifconfig"
+
 #=================================================
-# SETUP SYSTEM CONFS
+# SYSTEM CONFIGURATION
 #=================================================
-ynh_script_progression --message="Adding system configurations related to $app..." --weight=1
+ynh_script_progression "Adding system configurations related to $app..."
 
-ynh_add_nginx_config
+ynh_config_add_nginx
 
-# Create a dedicated systemd config
-ynh_add_systemd_config
+ynh_config_add_systemd
 
-# Use logrotate to manage application logfile(s)
-ynh_use_logrotate --logfile="/var/log/$app/$app.log"
+ynh_config_add_logrotate
 
 yunohost service add "$app" --description="IP address API" --log="/var/log/$app/$app.log"
 
 #=================================================
 # START SYSTEMD SERVICE
 #=================================================
-ynh_script_progression --message="Starting service..." --weight=1
+ynh_script_progression "Starting service..."
 
-# Start a systemd service
-ynh_systemd_action --service_name="$app" --action="start" --log_path="/var/log/$app/$app.log"
+ynh_systemctl --service="$app" --action="start"
 
 #=================================================
 # END OF SCRIPT
 #=================================================
 
-ynh_script_progression --message="Installation of $app completed" --last
+ynh_script_progression "Installation of $app completed"

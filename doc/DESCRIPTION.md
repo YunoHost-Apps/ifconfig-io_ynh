@@ -1,5 +1,1 @@
-Inspired by ifconfig.me, but designed for pure speed. A single server can do 18,000 requests per seconds while only consuming 50megs of ram.
-
-I used the gin framework as it does several things to ensure that there are no memory allocations on each request, keeping the GC happy and preventing unnessary allocations.
-
-Tested to handle 15,000 requests persecond on modest hardware with an average response time of 130ms.
+Tool to find your own IP address, and information about it.
