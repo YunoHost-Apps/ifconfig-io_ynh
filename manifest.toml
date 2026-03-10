@@ -7,7 +7,7 @@ name = "ifconfig-io"
 description.en = "Tool to find your own IP address"
 description.fr = "Outil pour trouver votre propre adresse IP"
 
-version = "2026.01.12~ynh1"
+version = "2026.02.28~ynh1"
 
 maintainers = ["Fabian Wilkens"]
 
@@ -44,8 +44,8 @@ ram.runtime = "80M"
 
 [resources]
     [resources.sources.main]
-    url = "https://github.com/georgyo/ifconfig.io/archive/f2027aeed44deb6ee7e3e7255d072952b7148801.tar.gz"
-    sha256 = "8a247a2c8ae8aaebaf13700a4a59d7c48a04b99ac9a8672746c5ad1626771f76"
+    url = "https://github.com/georgyo/ifconfig.io/archive/63cf38335db0a2ebfcc52c1b6b0cce2f76909a28.tar.gz"
+    sha256 = "4c34c12932c58d514062327f9a9757cd65eceefda80c75fb8d3a465df538429d"
     autoupdate.strategy = "latest_github_commit"
 
     [resources.system_user]
